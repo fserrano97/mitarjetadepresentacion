@@ -1,0 +1,174 @@
+* { box-sizing: border-box; margin:0; padding:0; font-family: "Poppins", sans-serif; }
+
+body {
+  background: url('/images/galaxia.gif') no-repeat center center fixed;
+  background-size: 100% 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: 0;
+}
+
+.tarjeta {
+  position: relative;
+  z-index: 1;
+}
+
+#container-padre {
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 400px;
+    padding: 40px 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta { 
+        perspective: 1000px;
+        width: 300px;
+}
+
+.tarjeta-inner {
+    position: relative;
+    height: 336px;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.3s;
+    transform-style: preserve-3d;
+}
+
+.tarjeta-inner.volteada {
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3); 
+
+}
+
+.tarjeta-frente, .tarjeta-dorso {
+      position: absolute;
+      width: 100%; height: 100%;
+      backface-visibility: hidden;
+      display: flex; 
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      gap: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background-color: #fff}
+
+.tarjeta-dorso { 
+    transform: rotateY(180deg);
+}
+
+.tarjeta-frente button, .tarjeta-dorso button {
+    cursor: pointer;
+    background-color: #0c1840;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+.tarjeta-frente button:hover, .tarjeta-dorso button:hover {
+    background-color: #7a83a7;
+}
+
+.tarjeta-frente img{
+    width: 8.5em;
+    border-radius: 20px;
+}
+
+.tarjeta-frente h1{
+    color: #454d6c;
+    font-size: 1.5em;
+}
+
+.tarjeta-frente p {
+   font-family: 'Inter Tight';
+    color: #2e2e2e;
+    font-weight: 900;
+}
+
+.tarjeta-dorso h1{
+    color: #1a125c;
+    margin: 5px;
+    font-size: 18px;
+}
+
+.tarjeta-dorso p{
+    font-family: "Montserrat", sans-serif;
+    color: #444;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#redes{
+    height: 35px;
+}
+
+#redes a img{
+    width:26px;
+   margin: 5px 0px 5px 0px;
+}
+
+#redes a {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.container-burbujas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+@keyframes burbujaRebote {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-8px) scale(1.1); }
+  60% { transform: translateY(2px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.container-burbujas div {
+    background-color: #97a2cd;
+    color: #1c2b5e;
+    border-radius: 11px;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.container-burbujas div:hover {
+  background-color: #1a125c;
+  color: white;
+  animation: burbujaRebote 0.5s ease;
+}

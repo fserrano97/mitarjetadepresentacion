@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta 3D Florencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chewy&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<div class="tarjeta">
+    <div class="tarjeta-inner" id="tarjeta">
+
+    <div class="tarjeta-frente">
+        <img src="/images/fotochatgpt.png" alt="Foto de Florencia">
+        <h1>Florencia Serrano</h1>
+        <p>FULL STACK DEVELOPER</p>
+        <button onclick="voltearTarjeta()" title="Ver más sobre Florencia">Ver más</button>
+    </div>
+
+    <div class="tarjeta-dorso">
+        <h1>Sobre mi</h1>
+        <div class="container-burbujas">
+            <div>
+                <h3>🙋‍♀️27 años</h3>
+            </div>
+            <div>
+                <h3>🩵Argentina</h3>
+            </div>
+            <div>
+                <h3>👩‍👧Mamá</h3>
+            </div>
+            <div>
+                <h3>📍La Plata, Bs As</h3>
+            </div>
+        </div>
+    
+        
+        <p>  Disfruto del diseño y la programación web. Me apasiona crear sitios visualmente atractivos y fáciles de usar, combinando creatividad con lógica.</p>
+    
+        <div id="redes">
+            <a href="https://www.linkedin.com/in/florencia-serrano-988331378/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><img src="/images/linkedin.png" alt="Linkedin de Florencia"></a>
+            <a href="https://wa.me/+542236687038?text=Hola%20%20Florencia.%20Te%20escribo%20desde.." target="_blank"><img src="/images/whatsapp.png" alt="WhatsApp de Florencia"></a>
+            <a href="https://github.com/fserrano97" target="_blank"><img src="/images/github.png" alt="GitHub de Florencia"></a>
+        </div>
+
+         <button onclick="voltearTarjeta()" title="Volver a la tarjeta principal">Volver</button>
+    </div>
+
+</div>
+</div>
+
+
+
+<script>
+
+    function mostrar(n) {
+      document.getElementById('contenido1').style.display = (n===1) ? 'block' : 'none';
+      document.getElementById('contenido2').style.display = (n===2) ? 'block' : 'none';
+      document.getElementById('btn1').classList.toggle('activa', n===1);
+      document.getElementById('btn2').classList.toggle('activa', n===2);
+    }
+
+    function voltearTarjeta() {
+      document.getElementById("tarjeta").classList.toggle("volteada");
+    }
+
+</script>
+</body>
+</html>
