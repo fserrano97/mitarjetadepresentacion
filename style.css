@@ -1,4 +1,9 @@
-* { box-sizing: border-box; margin:0; padding:0; font-family: "Poppins", sans-serif; }
+* {
+   box-sizing: border-box; 
+   margin:0; 
+   padding:0; 
+   font-family: "Poppins", sans-serif; 
+}
 
 body {
   position: relative;
@@ -11,7 +16,6 @@ body {
   overflow: hidden;
 }
 
-/* Fondo de tu imagen */
 body::before {
   content: "";
   position: fixed;
@@ -20,12 +24,11 @@ body::before {
   width: 100%;
   height: 100%;
   background: url('images/fondopaint.png') no-repeat center center fixed;
-  background-size: cover;      /* adapta la imagen sin deformarla */
-  background-position: center; /* centra la composición */
+  background-size: cover;      
+  background-position: center; 
   z-index: -2;
 }
 
-/* Capa oscura para contraste */
 body::after {
   content: "";
   position: fixed;
@@ -33,23 +36,22 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55); /* ajustá el 0.55 según quieras más o menos oscuridad */
+  background: rgb(0 0 0 / 6%); 
   z-index: -1;
 }
 
-/* Ajuste especial para celular */
 @media (max-width: 600px) {
   body::before {
     background-size: cover;
-    background-attachment: scroll; /* evita saltos en móviles */
+    background-attachment: scroll; 
   }
 
   body::after {
-    background: rgba(0, 0, 0, 0.6); /* un poco más oscuro en pantalla chica */
+    background: rgb(0 0 0 / 15%);
   }
 }
 
-/* Fondo con animación */
+
 body::before {
   content: "";
   position: fixed;
@@ -57,16 +59,16 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('images/fondopaint.png') repeat; /* repeat para que se vea el movimiento continuo */
+  background: url('images/fondopaint.png') repeat; 
   background-size: cover;
   background-position: 0 0;
   z-index: -2;
-  animation: moverFondo 60s linear infinite; /* animación lenta */
+  animation: moverFondo 60s linear infinite; 
 }
 
 @keyframes moverFondo {
   0% { background-position: 0 0; }
-  100% { background-position: 1000px 1000px; } /* mueve diagonal, podés cambiar los valores */
+  100% { background-position: 1000px 1000px; } 
 }
 
 .tarjeta {
