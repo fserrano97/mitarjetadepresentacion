@@ -47,7 +47,7 @@ body::after {
   }
 
   body::after {
-    background: rgb(0 0 0 / 15%);
+    background: rgb(0 0 0 / 6%);
   }
 }
 
